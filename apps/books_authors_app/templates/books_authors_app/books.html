@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Books and Authors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script> -->
+</head>
+<body>
+    <h1>{{select_book.title}}</h1>
+    <h4>ID:{{select_book.id}}</h4>
+    <h4>Description:{{select_book.desc}}</h4>
+    <h4>Authors:</h4>
+    <ul>
+        {% for i in authors %}
+        <li>{{ i.first_name}} {{i.last_name}}</li>
+        {% endfor %}
+    </ul>
+    <form action = "/addauthor/{{id}}" method = "post">
+        {% csrf_token %}
+        <select name = "newauthor" >
+        {% for i in all_authors %}
+            {% if  i not in authors %}  
+            <option value = {{i.id}}>{{i.first_name}} {{i.last_name}}</option>
+            {% endif %}
+        {% endfor %}
+        </select>
+        <input type = "submit" value = "Add">
+    </form>
+
+    <h6><a href="/">Go Back</a></h6>
+
+
+
+</body>
+</html>
+

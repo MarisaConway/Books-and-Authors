@@ -1,0 +1,73 @@
+books.objects.create(title = "C Sharp")
+books.objects.create(title = "Java")
+books.objects.create(title = "Python")
+books.objects.create(title = "PHP")
+books.objects.create(title = "Ruby")
+
+
+authors.objects.create(first_name = "Jane", last_name = "Austen"
+authors.objects.create(first_name = "Emily" last_name = "Dickinson"
+authors.objects.create(first_name ="Fyodor", last_name = "Dostoevksy"
+authors.objects.create(first_name ="William", last_name = "Shakespeare"
+authors.objects.create(first_name ="Lau", last_name = "Tzu"
+
+
+
+books.objects.get(title = "C Sharp")
+
+
+c# = books.objects.get(title = "C Sharp")
+c#.title = "c#" 
+c#.save()
+
+
+Bill = authors.objects.get(id=4)
+Bill.first_name = "Bill"
+Bill.save()
+
+
+
+
+#assign the first author to the first 2 books
+
+first_author = authors.objects.first()
+this_book = books.objects.get(id=1, id=2)
+first_author.books.add(this_book)
+
+
+#assign the second author to the first 3 books
+second_author = authors.objects.get(id = 2)
+some_books = books.objects.get(id=1, id=2, id=3)
+second_author = authors.objects.add(some_books) 
+
+
+third_author = authors.objects.get(id = 3)
+more_books = books.objects.get(id=1, id=2, id=3, id=4)
+third_author = authors.objects.add(more_books)
+
+
+fourth_author = authors.objects.get(id = 4)
+all_books = books.objects.all()
+fourth_author = authors.objects.add(all_books)
+
+
+#Check... retrieving all of the authors for the third book)
+authors.books.get(id = 3)
+
+#Retrieve all the authors for the 3rd book 
+
+
+#how do you remove the first author of the 3rd book
+
+
+#add the 5th author as one of the authors of the 2nd book
+second_book = books.objects.get(id = 2)
+second_book.authors.objects.add(id = 5)
+
+
+#find all the books that the 3rd author is part of 
+
+
+
+
+#find all the authors that contributed to the 5th book
